@@ -1,6 +1,6 @@
 # Dublit & Dragons
 
-Welcome to Dublit & Dragons – your innovative assistant geared towards enhancing the Dungeons & Dragons (D&D) experience for Game Masters (GMs). This powerful tool utilizes AI to craft various elements for D&D campaigns, such as character tokens, encounter maps, backstories, stat blocks, and more. This assistant intends to stay within established D&D lore and rules; however, as a new and general purpose LLM (ModelFarm by Rplit) it will go outside of the lore and rules on occasion. By using services such as the dnd5eAPI, we are able to create a RAG-like functionality to keep the assistant within context in certain scenarios.
+Welcome to Dublit & Dragons – your innovative assistant geared towards enhancing the Dungeons & Dragons (D&D) experience for Game Masters (GMs). This powerful tool utilizes AI to craft various elements for D&D campaigns, such as character tokens, encounter maps, backstories, stat blocks, and more. This assistant intends to stay within established D&D lore and rules; however, as a new and general purpose LLM (ModelFarm by Replit) it will go outside of the lore and rules on occasion. By using services such as the dnd5eAPI, we are able to create a RAG-like functionality to keep the assistant within context in certain scenarios.
 
 ## Features
 
