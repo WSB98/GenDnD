@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"><link href="../static/css/style.css" rel="stylesheet" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../static/favicon/site.webmanifest">
+  <!-- Essential META Tags -->
+  <meta property="og:title" content="Dublit &amp; Dragons">
+  <meta property="og:description" content="Enhance your D&amp;D experience with our innovative assistant that crafts characters, maps, backstories and more. Generative Dungeons and Dragons assistant that lets you create Chracters, Encounters, Areas, and Items with one sentence!">
+  <meta property="og:image" content="../static/favicon/android-chrome-512x512.png">
+  <meta property="og:url" content="https://dndnpc.dublit.org">
+  <meta name="twitter:card" content="Enhance your D&amp;D experience with our innovative assistant that crafts characters, maps, backstories and more.">
+  <!-- Non-Essential, But Recommended -->
+  <meta property="og:site_name" content="Dublit &amp; Dragons">
+  <meta name="twitter:image:alt" content="Dublit logo">
+  <title>Dublit &amp; Dragons</title>
+</head>
+<body>
+  <h1>Dublit & Dragons</h1>
+  <h5>Generative Dungeons and Dragons Assistant</h5>
+
+  <div id="options">
+    <label class="custom-radio">Character
+        <input type="radio" name="radio-option" checked>
+        <span class="checkmark"></span>
+    </label>
+
+    <label class="custom-radio">Encounter
+        <input type="radio" name="radio-option">
+        <span class="checkmark"></span>
+    </label>
+
+    <label class="custom-radio">Area
+        <input type="radio" name="radio-option">
+        <span class="checkmark"></span>
+    </label>
+
+    <label class="custom-radio">Item
+        <input type="radio" name="radio-option">
+        <span class="checkmark"></span>
+    </label>
+  </div>
+  <div id="inputs">
+    <input type="text" id="textInput" name="textInput" placeholder="Describe what you want in a few words">
+    <button id="requestImage"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9V168c0-8.7 4.7-16.7 12.3-20.9z"/></svg>
+    </button>
+  </div>
+  
+  <hr>
+  <div>
+    <a id="copy_character">
+      <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M64 464H288c8.8 0 16-7.2 16-16V384h48v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h64v48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16zM224 304H448c8.8 0 16-7.2 16-16V64c0-8.8-7.2-16-16-16H224c-8.8 0-16 7.2-16 16V288c0 8.8 7.2 16 16 16zm-64-16V64c0-35.3 28.7-64 64-64H448c35.3 0 64 28.7 64 64V288c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64z"/></svg>
+       <div class="tooltiptext" id="myTooltip">Copy</div>
+    </a>
+  </div>
+  <div id="characterInfo">
+    <img id="promptImage"/>
+    <div>
+      <h2>Stat Block</h2>
+      <p id="statBlock"></p>
+
+      <h2>Backstory</h2>
+      <p id="backstory"></p>
+    </div>
+  </div>
+  
+   <script src="../static/js/script.js"></script>
+</body>
+</html>

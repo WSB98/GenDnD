@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Foldit:wght@600&family=IBM+Plex+Mono&family=Inter&family=Monoton&family=Nunito&family=Open+Sans&family=Plaster&family=Raleway:wght@300;500&family=Roboto&family=Roboto+Mono&display=swap');
+body {
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color:#cccccc;
+  background:linear-gradient(45deg, #fffdfa,#cccccc);
+  margin: 0 auto;
+  padding:0;
+}
+
+h1 {
+  font-family: 'Nunito', -system-ui;
+  font-size: 2.4em;
+  text-align:center;
+  margin-top:1em;
+}
+h5 {
+  font-family: 'Nunito', -system-ui;
+  font-size: 1em;
+  text-align:center;
+  margin-top:0px;
+  margin-bottom:2em;
+}
+
+#promptImage {
+  position:relative;
+  width:250px;
+  height:250px;
+  border-radius:300px;
+  border:2px solid #00000000;
+  outline:none;
+  box-shadow:0px 0px 12px #22222250;
+}
+#characterInfo {
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:80%;
+  margin:0 auto;
+  margin-top:24px;
+  padding:24px;
+  
+}
+
+#inputs {
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  width:80%;
+  margin:0 auto;
+  border-radius:8px;
+  box-shadow:0px 0px 12px #22222250;
+}
+
+#inputs input[type="text"] {
+  width:80%;
+  height:38px;
+  background:linear-gradient(90deg, #cccccc,#fffdfa);
+  border-radius:8px 0px 0px 8px;
+  border:none;
+  outline:none;
+  padding:4px;
+}
+
+#inputs button {
+  width:20%;
+  border-radius:0px 8px 8px 0px;
+  border:none;
+  outline:none;
+  background:linear-gradient(90deg, #fffdfa, #cccccc);
+  cursor:pointer;
+  align-items:center;
+  transition:background ease-out 0.2s;
+}
+
+#inputs button svg {
+  height:90%;
+  fill:#222222;
+  margin:0 auto;
+  width:auto;
+  margin:1px;
+}
+
+#inputs button:hover {
+  animation: gradientToSolid 0.5s ease-out forwards; /* 0.5s is the duration of the animation */
+}
+#inputs button:active {
+  animation: gradientToSolid 0.5s reverse; /* 0.5s is the duration of the animation */
+}
+
+
+@keyframes gradientToSolid {
+  from {
+    background: linear-gradient(90deg, #fffdfa 0%, #cccccc 50%);
+  }
+  to {
+    background: linear-gradient(90deg, #fffdfa 0%, #cccccc 0%);
+  }
+}
+
+
+/* Customize the scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  background:linear-gradient(45deg, #fffdfa,#cccccc);
+  background-color:#00000000;
+}
+
+/* Track of the scrollbar */
+::-webkit-scrollbar-track {
+  background: #00000000;
+  background-color:#00000000;
+  border-radius: 5px;
+}
+
+/* Handle aka Thumb */
+::-webkit-scrollbar-thumb {
+  background: lightgrey;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darkgrey;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) scale(0.95);
+  }
+  50% {
+    scale(1.05)
+  }
+  100% {
+    transform: rotate(360deg) scale(0.95);
+  }
+}
+.loaderAnimation {
+  animation: rotate 2s infinite;
+}
+#svgPath {
+  animation: pulse 2s infinite;
+}
+
+#loader svg{
+  width:64px;
+  height:64px;
+}
+
+
+#options {
+  display:flex;
+  margin:0 auto;
+  flex-direction:row;
+  flex-wrap:wrap;
+  width:90%;
+  justify-content:space-around;
+  margin-bottom:12px;
+  gap:24px;
+}
+
+/* Custom radio container */
+.custom-radio {
+  display: flex;
+  position: relative;
+  padding:2px;
+  cursor: pointer;
+  font-size: 18px;
+  color:#222222;
+}
+
+/* Hide default radio input */
+.custom-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Style the radio indicator */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #fffdfa20;
+  border:1px solid #222;
+  border-radius: 6px;
+  z-index:-1;
+  transition:all ease-out 0.2s;
+  overflow:hidden;
+}
+
+/* On mouse-over, add a grey background color */
+.custom-radio:hover input ~ .checkmark {
+  background-color: #fffdfa40;
+}
+
+/* When the radio input is checked, change the background color */
+.custom-radio input:checked ~ .checkmark {
+  background-color: #fffdfa69;
+  display:flex;
+  left: -30px;
+  height: 100%;
+  width: 100%;
+  padding-left: 30px;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: relative;
+  display: none;
+}
+
+/* Show the checkmark when the radio input is checked */
+.custom-radio input:checked ~ .checkmark:after {
+  display: block;
+  content:'✔';
+  left:-25px;
+}
+
+
+/* Show the checkmark when the radio input is checked */
+.custom-radio input:checked ~ .checkmark:after {
+  display: block;
+  content:'✔';
+  left:-25px;
+}
+
+#copy_character {
+  margin-left:12px;
+  height:28px;
+  width:28px;
+  cursor:pointer;
+  display:flex;
+  flex-direction:row;
+}
+#copy_character svg {
+  fill:#222222;
+  height:28px;
+  width:28px;
+}
+
+/* Additional styles for notification */
+.notification-popup {
+  background-color: #04AA6D;
+  color: white;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  right: 30px;
+  top: 30px;
+  font-size: 17px;
+  display: none;
+}
+
+.fade-out {
+  animation-name: fadeOut;
+  animation-duration: 4s;
+}
+
+@keyframes fadeOut {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
+.tooltiptext {
+  width: 120px;
+  background-color: #22222279;
+  color: #fffdfa;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  opacity: 0;
+  transition: all ease-out 0.3s;
+  visibility: hidden;
+  left:48px;
+}
+
+#copy_character:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
