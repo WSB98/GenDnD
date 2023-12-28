@@ -15,7 +15,7 @@ Access the assistant via the web interface and utilize the radio buttons to sele
 
 ## DnD5e API Integration
 
-The DnD5e API provides a robust foundation for the assistant by offering a reference to well-established game elements. Current integration is minimal but enriches AI prompts with accurate D&D data, providing a "Rule-As-Given" (RAG) experience.
+The DnD5e API provides a robust foundation for the assistant by offering a reference to well-established game elements. Current integration is minimal but enriches AI prompts with accurate D&D data, providing a "Retrieval-Augmented Generation" (RAG) experience.
 
 ### Current Implementation
 
