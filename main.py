@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from image_generation import generate_image, generate_map
+from image_generation import generate_image, generate_map, generate_item_image
 from  modelFarmInteraction import generate_backstory, generate_statBlock, generate_area, generate_custom_item, generate_encounter, generate_encounter_backstory
 from dnd5eapi import get_all_monsters
 
@@ -77,7 +77,7 @@ def get_image():
       }
     case 'Item':
       print('Step 2', f'Generating Image of a {requestText}')
-      image = generate_image(requestText)
+      image = generate_item_image(requestText)
       print('Step 3', f'Generating Description of a {requestText}')
       responseText = generate_custom_item(requestText)
       print('Step 4', f'Generating History for a {requestText}')
@@ -94,7 +94,7 @@ def get_image():
     case _:
       print('something went wrong. please refresh and try again.')
       returnDict = {
-        'statblock': responseText,
+        'statblock': responseText + 'something went wrong! please wait, refresh, and try again (:',
         'backstory': backstory,
         'image': 'no image',
         'requestType':requestType

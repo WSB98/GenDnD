@@ -10,7 +10,7 @@ def generate_image(text):
         model="dall-e-2",
         prompt=customPrompt,
         n=1,
-        size="256x256"
+        size="512x512"
     )
     return image
 
@@ -24,3 +24,13 @@ def generate_map(text):
         quality='standard'
     )
     return image
+
+def generate_item_image(text):
+  customPrompt = f'Design Dungeons & Dragons item art of a {text}, done in a low poly style with minimal detail. Fit the art within a circular frame. DO NOT include any words.'
+  image = openai.Image.create(
+      model="dall-e-2",
+      prompt=customPrompt,
+      n=1,
+      size="512x512"
+  )
+  return image
