@@ -20,7 +20,7 @@ def get_image():
   print('Step 1')
   requestText = request.json['text']
   requestType = request.json['type']
-  print('text: ',requestText,'\ntype: ',requestType)
+  print(f'''Building a(n) {requestType} for a(n) {requestText}''')
 
   match requestType:
     case 'Character':
@@ -49,15 +49,17 @@ def get_image():
       print('Step 3', f'Generating Description of a {requestText}')
       monsterNames = get_all_monsters()
       responseText = generate_encounter(requestText,monsterNames)
+      
       print('Step 4', f'Generating History for {requestText}')
       backstory = generate_encounter_backstory(requestText,requestText)
       # chat to modelFarm# return all of the data
       print('Step 5', f'Building Return Data for a {requestText}')
       returnDict = {
-        'statblock': responseText,
+        'statblock': responseText['result'],
         'backstory': backstory,
         'image': image.data[0].url,
-        'requestType':requestType
+        'requestType':requestType,
+        'monsters': responseText['monsters']
       }
     case 'Area':
       print('Step 2', f'Generating Image of a {requestText}')

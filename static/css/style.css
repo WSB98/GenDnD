@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Foldit:wght@600&family=IBM+Plex+Mono&family=Inter&family=Monoton&family=Nunito&family=Open+Sans&family=Plaster&family=Raleway:wght@300;500&family=Roboto&family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Foldit:wght@600&family=IBM+Plex+Mono&family=Inter&family=Monoton&family=Nunito&family=Open+Sans&family=Raleway:wght@500&family=Roboto&family=Roboto+Mono&display=swap');
+
 
 body {
   font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -243,14 +244,11 @@ h5 {
 }
 
 #copy_character {
-  margin-left:12px;
   height:28px;
   width:28px;
   cursor:pointer;
-  display:flex;
-  flex-direction:row;
 }
-#copy_character svg {
+#client_actions a svg {
   fill:#222222;
   height:28px;
   width:28px;
@@ -292,13 +290,20 @@ h5 {
   opacity: 0;
   transition: all ease-out 0.3s;
   visibility: hidden;
-  left:48px;
 }
 
 #copy_character:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
 }
+#storage:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+#storage {
+  cursor:pointer;
+}
+
 
 /* Style the footer */
 .site-footer {
@@ -347,4 +352,88 @@ h5 {
   color:#fffdfa;
   padding: 10px 0;
   font-size: 14px;
+}
+
+#client_actions {
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+}
+
+/* Add these styles in your style.css file */
+#storageMenu {
+  background-color: #fffdfa60;
+  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px);
+  position: fixed;
+  left:calc(50% - 30vw);
+  margin:0 auto;
+  align-self:center;
+  top:64px;
+  height:70vh;
+  width:60vw;
+  z-index: 1000;
+  overflow-y: auto;
+  box-shadow:0px 0px 72px 0px #22222250;
+  border-radius: 32px 12px 12px 32px;
+  padding: 20px;
+}
+
+#previewTable {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+#previewTable th,
+#previewTable td {
+  padding: 10px;
+  border-bottom: 1px solid #444141;
+  margin-top:12px;
+}
+
+#previewTable th {
+  background-color: #222222;
+  color: #fffdfa;
+  font-family:'Raleway';
+  font-weight:100;
+}
+#leftEnd {
+  border-radius: 32px 0px 0px 32px;
+}
+#rightEnd {
+  border-radius: 0px 32px 32px 0px;
+}
+#closeStorageMenu {
+  margin-top: 10px;
+  padding: 6px 16px;
+  cursor: pointer;
+  border-radius:12px;
+  border:1px solid #222222;
+  outline:none;
+  font-size:18px;
+}
+
+#previewTable tr td button {
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius:12px;
+  outline:none;
+  font-size:18px;
+}
+
+.genSelections {
+  width:128px;
+}
+.genSelections button {
+  margin-top:12px;
+}
+.view {
+  background-color:#222222;
+  color:#fffdfa;
+}
+.delete {
+  background-color:#b85b4c;
+  color:#fffdfa;
 }

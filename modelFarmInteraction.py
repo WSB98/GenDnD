@@ -1,4 +1,5 @@
 from replit.ai.modelfarm import ChatModel, ChatSession, ChatMessage
+from dnd5eapi import get_all_monsters, get_monster, get_background, get_class, get_race, get_spell
 
 
 def chat_to_modelFarm(messageHistory):
@@ -48,7 +49,13 @@ def generate_custom_item(prevReq):
 
 
 def generate_encounter(prevReq,names):
+  names = names['results']
   chatHistory = [ChatMessage(author="USER", content=f"Create an encounter that makes sense in the context of {prevReq} using monsters from the following list: {names}. Include some descriptions and details in the form of a stat block about the encounter.")]
   responseText = chat_to_modelFarm(chatHistory)
 
-  return responseText
+  monsters = []
+  for o in names:
+    if(o.lower() in responseText.lower()):
+      monsters.append({"link":f'https://dndbeyond.com/monsters/{o}','name':o})
+
+  return {"result":responseText, "monsters":monsters}
