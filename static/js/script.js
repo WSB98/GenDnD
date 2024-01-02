@@ -125,8 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
             text: textInput,
             type: selectedText,
             link: link,
-            statblock: statblock,
-            backstory: backstory,
+            statblock: statblockText.innerHTML,
+            backstory: backstoryText.innerHTML,
             date: new Date().toLocaleString()
           };
           const randomNumbers = Math.random().toString(36).substring(2, 10);
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
           wordAmt = 18;
           break;
         case 'character':
-          wordAmt = 5;
+          wordAmt = 6;
           break;
         default:
           wordAmt = 12;
@@ -280,7 +280,6 @@ document.addEventListener('DOMContentLoaded', () => {
             promptImage.style.height = '250px';
             promptImage.style.borderRadius = '300px';
         }
-        console.log(e.target.innerText)
         if(e.target.innerText != 'Delete'){
           document.getElementById('closeStorageMenu').click();
         }
